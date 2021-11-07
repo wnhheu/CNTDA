@@ -35,5 +35,8 @@ My notes about Computer Networking: A Top-Down approach
 
 暂时如此
 
-致敬tomatoeater，他的笔记很不错！我要向他学习
+---
 
+## 致谢
+我的笔记的部分内容参考了[Resource](https://blog.csdn.net/qq_39326472/article/details/88089747/#1.1%20%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%A0%E7%89%B9%E7%BD%91)，事实上主要是减少了我自己打字的量，如果对比的话可以看出很多不同之处，在此致谢（我不是很清楚引用的格式）
+感谢tomatoeater，他的笔记很不错，也给了我写笔记的动力！我要向他学习
