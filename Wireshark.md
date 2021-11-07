@@ -32,7 +32,7 @@
 
 ---
 
-![wireshark_4](https://github.com/wnhheu/Photos/blob/main/wireshark_4.png)
+![wireshark_3](pic/wireshark_3.png)
 
 第二个是嵌入网页的对象，我们可以看到，No23的get命令之后没有收到服务器的回答，个人推测是不是因为在No19的get之后服务器就已经把这幅图片一起传过来了（因为在浏览器上这幅图片是和文字同时出现的）
 
@@ -40,7 +40,7 @@
 
 那么就很奇怪，这个图片去哪里了？我们没有收到服务器返回的文件
 
-![wireshark_6](https://github.com/wnhheu/Photos/blob/main/wireshark_6.png)
+![wireshark_4](pic/wireshark_4.png)
 
 这是对No116服务器返回信息的截图，我们可以看到重定向的地址是https://kurose.cslash.net/8E_cover_small.jpg
 
@@ -50,7 +50,7 @@
 
 ##### No23
 
-![wireshark_8](https://github.com/wnhheu/Photos/blob/main/wireshark_8.png)
+![wireshark_5](pic/wireshark_5.png)
 
 这里是取消了过滤器之后对No23的请求以及之后的响应的截图
 
@@ -62,7 +62,7 @@
 
 需要注意的是，https是http + ssl，但是ssl已经是过去式了，现在用的是TLS（我一开始在数据流里找https没有找到）
 
-![wireshark_9](https://github.com/wnhheu/Photos/blob/main/wireshark_9.png)
+![wireshark_6](pic/wireshark_6.png)
 
 这中间，No119-No124采用的LLMNR协议是域名解析协议，就是DNS域名解析，然后No128可以看到是一个TLSv1.2协议，这个可能就是我们向服务器请求照片的那个包，但是我不确定，可以看出来，~~Source IP和Target IP都是加密了的。。~~更正，不是加密，应该是IPv6地址（汗），地址好像没有加密的说法，你要是把地址加密的话路由器怎么转发包呢。。
 
