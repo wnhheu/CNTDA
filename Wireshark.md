@@ -16,7 +16,7 @@
 
 就像名字一样，很简单，就是访问一个网站，然后简单的抓包、分析
 
-![image-20211107110249371](C:\Users\wnhheu\AppData\Roaming\Typora\typora-user-images\image-20211107110249371.png)
+![wireshark_1](https://github.com/wnhheu/Photos/blob/main/wireshark_1.png)
 
 但是可以看到，这里在第一个GET请求之后，没有返回的包。。但是我的浏览器加载出了内容。。这就很神奇了
 
@@ -24,7 +24,7 @@
 
 ### 第二部分：HTTP 长文件/嵌入网页的对象/加密的网站
 
-![image-20211107111129077](C:\Users\wnhheu\AppData\Roaming\Typora\typora-user-images\image-20211107111129077.png)
+![wireshark_2](https://github.com/wnhheu/Photos/blob/main/wireshark_2.png)
 
 第一个是长文件，可以看到，这里可以看到一个很奇怪的内容**TCP Previous segment not captured**（不得不说，做这个作业会做出来好多奇怪的内容，看参考答案和自己去做完全不一样，因为网络还是一个颇为复杂的结构）
 
@@ -32,7 +32,7 @@
 
 ---
 
-![image-20211107112456897](C:\Users\wnhheu\AppData\Roaming\Typora\typora-user-images\image-20211107112456897.png)
+![wireshark_4](https://github.com/wnhheu/Photos/blob/main/wireshark_4.png)
 
 第二个是嵌入网页的对象，我们可以看到，No23的get命令之后没有收到服务器的回答，个人推测是不是因为在No19的get之后服务器就已经把这幅图片一起传过来了（因为在浏览器上这幅图片是和文字同时出现的）
 
@@ -40,7 +40,7 @@
 
 那么就很奇怪，这个图片去哪里了？我们没有收到服务器返回的文件
 
-![image-20211107113551461](C:\Users\wnhheu\AppData\Roaming\Typora\typora-user-images\image-20211107113551461.png)
+![wireshark_6](https://github.com/wnhheu/Photos/blob/main/wireshark_6.png)
 
 这是对No116服务器返回信息的截图，我们可以看到重定向的地址是https://kurose.cslash.net/8E_cover_small.jpg
 
@@ -50,7 +50,7 @@
 
 ##### No23
 
-![image-20211107113821938](C:\Users\wnhheu\AppData\Roaming\Typora\typora-user-images\image-20211107113821938.png)
+![wireshark_8](https://github.com/wnhheu/Photos/blob/main/wireshark_8.png)
 
 这里是取消了过滤器之后对No23的请求以及之后的响应的截图
 
@@ -62,7 +62,7 @@
 
 需要注意的是，https是http + ssl，但是ssl已经是过去式了，现在用的是TLS（我一开始在数据流里找https没有找到）
 
-![image-20211107114729696](C:\Users\wnhheu\AppData\Roaming\Typora\typora-user-images\image-20211107114729696.png)
+![wireshark_9](https://github.com/wnhheu/Photos/blob/main/wireshark_9.png)
 
 这中间，No119-No124采用的LLMNR协议是域名解析协议，就是DNS域名解析，然后No128可以看到是一个TLSv1.2协议，这个可能就是我们向服务器请求照片的那个包，但是我不确定，可以看出来，Source IP和Target IP都是加密了的。。
 
